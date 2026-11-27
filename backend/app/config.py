@@ -11,6 +11,8 @@ class Settings(BaseSettings):
     app_name: str = "Momentum API"
     environment: str = "development"
     database_url: str = "postgresql+psycopg://momentum:momentum@localhost:5433/momentum"
+    # Separate database for pytest; created automatically and wiped every test run
+    test_database_url: str = "postgresql+psycopg://momentum:momentum@localhost:5433/momentum_test"
     cors_origins: list[str] = ["http://localhost:5173"]
 
 

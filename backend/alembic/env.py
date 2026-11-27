@@ -13,8 +13,10 @@ from app.db import Base
 # access to the values within the .ini file in use.
 config = context.config
 
-# The database URL comes from app settings (env vars / .env), not alembic.ini
-config.set_main_option("sqlalchemy.url", get_settings().database_url)
+# The database URL comes from app settings (env vars / .env), not alembic.ini.
+# Callers like the test suite may set their own URL first.
+if not config.get_main_option("sqlalchemy.url"):
+    config.set_main_option("sqlalchemy.url", get_settings().database_url)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
