@@ -10,6 +10,25 @@ Timeline: **30–60 minutes a day, Nov 28, 2026 – Jan 11, 2027.** Daily self-u
 
 ---
 
+## Tech stack
+
+| Layer | Technology |
+| --- | --- |
+| Frontend | React + TypeScript + Tailwind (Vite) |
+| UI components | shadcn/ui, lucide icons, Recharts, Framer Motion, Sonner |
+| Frontend data / routing | TanStack Query, React Router |
+| Backend | Python + FastAPI |
+| Config / validation | pydantic-settings, Pydantic |
+| Database | PostgreSQL 17 (Docker, host port 5433) |
+| ORM / migrations | SQLAlchemy 2 + psycopg 3, Alembic |
+| Background jobs | APScheduler |
+| AI | LLM API with tool calling, behind our own wrapper so the provider can be swapped. Start on the **Gemini API free tier**; **OpenRouter free models** as a fallback |
+| Testing | Pytest |
+| Python tooling | uv |
+| Deployment | Docker Compose locally; Render or Railway for hosting |
+
+---
+
 ## UI/UX standards
 
 Momentum has to be something people **want** to open every day. A clunky UI kills a follow-through app faster than anything else. These are requirements, not extras.
