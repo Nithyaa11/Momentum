@@ -365,10 +365,10 @@ The goal of V1 is to test one hypothesis: **does learning from planned vs. actua
 
 | Version | Target |
 | --- | --- |
-| V1 feature-complete | Feb 7, 2027 |
-| V1 validated with test users | Mar 14, 2027 |
-| V2 | May 31, 2027 |
-| V3 | Aug 31, 2027 |
+| V1 released | Jan 11, 2027 |
+| V1.1 with test users | Jan 25, 2027 |
+| V2 | Mar 21, 2027 |
+| V3 | Optional, only if V1/V2 prove the idea |
 
 - [PLAN.md](PLAN.md): what each phase builds, plus the UI/UX standards
 - [SCHEDULE.md](SCHEDULE.md): the day-by-day schedule

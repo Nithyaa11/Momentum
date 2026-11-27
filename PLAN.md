@@ -4,7 +4,7 @@ This is the step-by-step plan for building **V1**, the smallest version that tes
 
 > **Learning from planned vs. actual makes plans more realistic and improves follow-through.**
 
-Timeline: about **10 weeks** of daily part-time work (Nov 28, 2026 – Feb 7, 2027), then **3 weeks of using it yourself** and **2 weeks with test users** (V1 validated by Mar 14, 2027).
+Timeline: **30–60 minutes a day, Nov 28, 2026 – Jan 11, 2027.** Daily self-use starts Dec 18, so V1 ships with about 3 weeks of real usage data. Test users follow in V1.1 (Jan 12–25).
 
 👉 **The day-by-day schedule is in [SCHEDULE.md](SCHEDULE.md).** This file explains *what* each phase builds and *why*.
 
