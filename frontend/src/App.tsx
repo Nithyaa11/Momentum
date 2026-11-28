@@ -9,8 +9,8 @@ export default function App() {
     <Routes>
       <Route element={<AppLayout />}>
         <Route index element={<NowPage />} />
-        <Route path="today" element={<PlaceholderPage title="Today" comingOn="Dec 4" />} />
-        <Route path="goals" element={<PlaceholderPage title="Goals" comingOn="Dec 3" />} />
+        <Route path="today" element={<PlaceholderPage title="Today" comingOn="Dec 3" />} />
+        <Route path="goals" element={<PlaceholderPage title="Goals" comingOn="Dec 2" />} />
         <Route path="progress" element={<PlaceholderPage title="Progress" comingOn="Dec 24" />} />
         <Route path="*" element={<PlaceholderPage title="Not found" comingOn="never" />} />
       </Route>

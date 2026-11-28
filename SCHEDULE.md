@@ -38,19 +38,20 @@ If a day runs over, finish it the next day and use a buffer day (🧩) to catch 
 | Sat Nov 28 | Frontend skeleton: Vite, React, TypeScript, Tailwind, shadcn/ui, React Router, TanStack Query. **Week 1 review** (`docs/log.md`) | ✅ Done (a day early) |
 | Sat Nov 28 | App shell: sidebar on desktop, bottom tabs with labels on mobile (pulled forward) | ✅ Done |
 | Sat Nov 28 | Frontend in `docker-compose.yml` + dev seed script + "Getting started" in the README (pulled forward) | ✅ Done |
+| Sat Nov 28 | 🧩 Buffer: clean start from a fresh clone + seed; API key passed to the backend container (pulled forward) | ✅ Done |
 | Sun Nov 29 | Free day: week closes | n/a |
 
 ## Week 2 (Mon Nov 30 – Sun Dec 6): Shared states, onboarding, first screens
 
 | Date | Task | Done when |
 | --- | --- | --- |
-| Mon Nov 30 | 🧩 Buffer: run everything from scratch (`docker compose up --build` + seed) and fix rough edges | Clean start works |
-| Tue Dec 1 | Shared states: skeletons, empty states, error states, toasts | Used on every page |
-| Wed Dec 2 | Profile API (`/api/me`) + **onboarding:** goals, available hours per weekday, best time of day | Completes in under 2 minutes |
-| Thu Dec 3 | **Goals page:** add, edit, archive | Fully working |
-| Fri Dec 4 | **Today page:** the day's plan, accept it, see what's checked in | Fully working |
-| Sat Dec 5 | **Now page:** "Do this now" card with a timer | Fully working |
-| Sun Dec 6 | 🧩 Buffer + **Week 2 review** | Notes in `docs/log.md` |
+| Mon Nov 30 | Shared states: skeletons, empty states, error states, toasts | Used on every page |
+| Tue Dec 1 | Profile API (`/api/me`) + **onboarding:** goals, available hours per weekday, best time of day | Completes in under 2 minutes |
+| Wed Dec 2 | **Goals page:** add, edit, archive | Fully working |
+| Thu Dec 3 | **Today page:** the day's plan, accept it, see what's checked in | Fully working |
+| Fri Dec 4 | **Now page:** "Do this now" card with a timer | Fully working |
+| Sat Dec 5 | 🧩 Buffer | Rough edges fixed |
+| Sun Dec 6 | **Week 2 review** | Notes in `docs/log.md` |
 
 The theme stays black and white (shadcn neutral) until you pick your own colors.
 
