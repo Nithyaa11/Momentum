@@ -3,8 +3,9 @@ import { useQuery } from '@tanstack/react-query'
 import { api, type Health } from '@/lib/api'
 import { cn } from '@/lib/utils'
 
-/** Tiny dot showing whether the backend and database are reachable. */
-export function ApiStatus() {
+/** Dot showing whether the backend and database are reachable.
+ *  `compact` hides the text (used in the mobile top bar), keeping it for screen readers. */
+export function ApiStatus({ compact = false }: { compact?: boolean }) {
   const { data, isPending, isError } = useQuery({
     queryKey: ['health'],
     queryFn: () => api<Health>('/health'),
@@ -16,7 +17,11 @@ export function ApiStatus() {
   const label = isPending ? 'Connecting…' : ok ? 'API connected' : 'API unavailable'
 
   return (
-    <div className="flex items-center gap-2 text-xs text-muted-foreground" role="status">
+    <div
+      className="flex items-center gap-2 text-xs text-muted-foreground"
+      role="status"
+      title={label}
+    >
       <span
         className={cn(
           'size-2 rounded-full',
@@ -24,8 +29,9 @@ export function ApiStatus() {
           ok && 'bg-emerald-500',
           (isError || (data && !ok)) && 'bg-red-500',
         )}
+        aria-hidden
       />
-      {label}
+      <span className={cn(compact && 'sr-only')}>{label}</span>
     </div>
   )
 }
