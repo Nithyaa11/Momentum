@@ -1,4 +1,7 @@
+import { Hammer } from 'lucide-react'
+
 import { PageHeader } from '@/components/PageHeader'
+import { EmptyState } from '@/components/states'
 
 type Props = { title: string; comingOn: string }
 
@@ -7,9 +10,7 @@ export function PlaceholderPage({ title, comingOn }: Props) {
   return (
     <>
       <PageHeader title={title} />
-      <div className="rounded-xl border border-dashed p-8 text-center text-sm text-muted-foreground">
-        Coming on {comingOn}.
-      </div>
+      <EmptyState icon={Hammer} title="Not built yet" description={`Coming on ${comingOn}.`} />
     </>
   )
 }

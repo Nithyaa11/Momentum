@@ -39,18 +39,19 @@ If a day runs over, finish it the next day and use a buffer day (🧩) to catch 
 | Sat Nov 28 | App shell: sidebar on desktop, bottom tabs with labels on mobile (pulled forward) | ✅ Done |
 | Sat Nov 28 | Frontend in `docker-compose.yml` + dev seed script + "Getting started" in the README (pulled forward) | ✅ Done |
 | Sat Nov 28 | 🧩 Buffer: clean start from a fresh clone + seed; API key passed to the backend container (pulled forward) | ✅ Done |
+| Sat Nov 28 | Shared states: skeletons, empty and error states, toasts; Now page reads today's real plan (pulled forward) | ✅ Done |
 | Sun Nov 29 | Free day: week closes | n/a |
 
 ## Week 2 (Mon Nov 30 – Sun Dec 6): Shared states, onboarding, first screens
 
 | Date | Task | Done when |
 | --- | --- | --- |
-| Mon Nov 30 | Shared states: skeletons, empty states, error states, toasts | Used on every page |
-| Tue Dec 1 | Profile API (`/api/me`) + **onboarding:** goals, available hours per weekday, best time of day | Completes in under 2 minutes |
-| Wed Dec 2 | **Goals page:** add, edit, archive | Fully working |
-| Thu Dec 3 | **Today page:** the day's plan, accept it, see what's checked in | Fully working |
-| Fri Dec 4 | **Now page:** "Do this now" card with a timer | Fully working |
-| Sat Dec 5 | 🧩 Buffer | Rough edges fixed |
+| Mon Nov 30 | Profile API (`/api/me`) + **onboarding:** goals, available hours per weekday, best time of day | Completes in under 2 minutes |
+| Tue Dec 1 | **Goals page:** add, edit, archive | Fully working |
+| Wed Dec 2 | **Today page:** the day's plan, accept it, see what's checked in | Fully working |
+| Thu Dec 3 | **Now page:** focus timer on the "Do this now" card | Fully working |
+| Fri Dec 4 | 🧩 Buffer | Rough edges fixed |
+| Sat Dec 5 | Free day. Optional: pull Week 3 forward | n/a |
 | Sun Dec 6 | **Week 2 review** | Notes in `docs/log.md` |
 
 The theme stays black and white (shadcn neutral) until you pick your own colors.
