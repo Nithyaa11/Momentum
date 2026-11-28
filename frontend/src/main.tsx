@@ -6,6 +6,9 @@ import { Toaster } from 'sonner'
 
 import App from '@/App'
 import '@/index.css'
+import { followSystemTheme } from '@/lib/theme'
+
+followSystemTheme()
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,7 +22,7 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
-      <Toaster position="bottom-center" richColors />
+      <Toaster position="bottom-center" richColors theme="system" />
     </QueryClientProvider>
   </StrictMode>,
 )
