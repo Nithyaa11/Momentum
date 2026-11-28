@@ -365,8 +365,8 @@ The goal of V1 is to test one hypothesis: **does learning from planned vs. actua
 
 | Version | Target |
 | --- | --- |
-| V1 released | Jan 11, 2027 |
-| V1.1 with test users | Jan 25, 2027 |
+| V1 released | Jan 8, 2027 |
+| V1.1 with test users | Jan 24, 2027 |
 | V2 | Mar 21, 2027 |
 | V3 | Optional, only if V1/V2 prove the idea |
 
