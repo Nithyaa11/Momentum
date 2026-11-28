@@ -27,5 +27,20 @@ services:
       db:
         condition: service_healthy
 
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    environment:
+      API_PROXY_TARGET: http://backend:8000
+      # Windows/macOS bind mounts don't send file-change events into the container
+      VITE_USE_POLLING: "true"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app # live code, so edits hot-reload
+      - /app/node_modules # keep the container's own Linux node_modules
+    depends_on:
+      - backend
+
 volumes:
   pgdata:

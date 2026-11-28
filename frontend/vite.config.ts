@@ -13,6 +13,8 @@ export default defineConfig({
     alias: { '@': path.resolve(import.meta.dirname, 'src') },
   },
   server: {
+    // Set in docker-compose: file events don't cross Windows/macOS bind mounts
+    watch: process.env.VITE_USE_POLLING ? { usePolling: true, interval: 300 } : undefined,
     // /api/* and /health are forwarded to FastAPI, so the browser never deals with CORS
     proxy: {
       '/api': API_TARGET,

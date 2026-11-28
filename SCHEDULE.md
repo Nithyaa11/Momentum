@@ -36,19 +36,23 @@ If a day runs over, finish it the next day and use a buffer day (🧩) to catch 
 | Fri Nov 27 | Pydantic schemas; goals and tasks API; Postgres-backed tests | ✅ Done |
 | Sat Nov 28 | Plans and check-in API (done / partial / skipped, undo) | ✅ Done |
 | Sat Nov 28 | Frontend skeleton: Vite, React, TypeScript, Tailwind, shadcn/ui, React Router, TanStack Query. **Week 1 review** (`docs/log.md`) | ✅ Done (a day early) |
-| Sun Nov 29 | Free day: week closes. Optional: pull Monday's task forward | n/a |
+| Sat Nov 28 | App shell: sidebar on desktop, bottom tabs with labels on mobile (pulled forward) | ✅ Done |
+| Sat Nov 28 | Frontend in `docker-compose.yml` + dev seed script + "Getting started" in the README (pulled forward) | ✅ Done |
+| Sun Nov 29 | Free day: week closes | n/a |
 
-## Week 2 (Mon Nov 30 – Sun Dec 6): Dev setup, design system, first screens
+## Week 2 (Mon Nov 30 – Sun Dec 6): Shared states, onboarding, first screens
 
 | Date | Task | Done when |
 | --- | --- | --- |
-| Mon Nov 30 | Frontend in `docker-compose.yml` + dev seed script + "Getting started" section in the README | `docker compose up` runs everything |
-| Tue Dec 1 | 🧩 Buffer: run everything from scratch and fix rough edges | Clean start works |
-| Wed Dec 2 | Design tokens (light and dark) + app shell: sidebar on desktop, bottom tabs on mobile | Looks right at 375px and 1440px |
-| Thu Dec 3 | Shared states: skeletons, empty states, error states, toasts | Used on every page |
-| Fri Dec 4 | Profile API (`/api/me`) + **onboarding:** goals, available hours per weekday, best time of day | Completes in under 2 minutes |
-| Sat Dec 5 | **Goals page:** add, edit, archive | Fully working |
-| Sun Dec 6 | **Today page** + **Now page** ("Do this now" card with a timer). Week review | Fully working |
+| Mon Nov 30 | 🧩 Buffer: run everything from scratch (`docker compose up --build` + seed) and fix rough edges | Clean start works |
+| Tue Dec 1 | Shared states: skeletons, empty states, error states, toasts | Used on every page |
+| Wed Dec 2 | Profile API (`/api/me`) + **onboarding:** goals, available hours per weekday, best time of day | Completes in under 2 minutes |
+| Thu Dec 3 | **Goals page:** add, edit, archive | Fully working |
+| Fri Dec 4 | **Today page:** the day's plan, accept it, see what's checked in | Fully working |
+| Sat Dec 5 | **Now page:** "Do this now" card with a timer | Fully working |
+| Sun Dec 6 | 🧩 Buffer + **Week 2 review** | Notes in `docs/log.md` |
+
+The theme stays black and white (shadcn neutral) until you pick your own colors.
 
 ## Week 3 (Mon Dec 7 – Sun Dec 13): Core loop in the UI, then the AI agent
 

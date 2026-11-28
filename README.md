@@ -20,10 +20,11 @@ People don't need another tool to *create* plans. They need a system that helps 
 8. [Data model](#data-model)
 9. [Using the LLM sensibly](#using-the-llm-sensibly)
 10. [Tech stack](#tech-stack)
-11. [Roadmap](#roadmap)
-12. [Risks and how we handle them](#risks-and-how-we-handle-them)
-13. [How we measure success](#how-we-measure-success)
-14. [FAQ](#faq)
+11. [Getting started](#getting-started)
+12. [Roadmap](#roadmap)
+13. [Risks and how we handle them](#risks-and-how-we-handle-them)
+14. [How we measure success](#how-we-measure-success)
+15. [FAQ](#faq)
 
 ---
 
@@ -331,6 +332,61 @@ We don't send the user's whole history to the LLM on every call. That wastes tok
 | Deployment | Docker + Docker Compose |
 
 We are deliberately **not** adding Redis, Kafka, Neo4j or Kubernetes until there is a real need.
+
+---
+
+## Getting started
+
+You need [Docker](https://www.docker.com/) and Git. For running things outside Docker, also [uv](https://docs.astral.sh/uv/) and Node.js 22+.
+
+### Run everything with Docker
+
+```bash
+git clone https://github.com/Nithyaa11/Momentum.git
+cd Momentum
+docker compose up --build
+```
+
+| Service | URL | Notes |
+| --- | --- | --- |
+| App | http://localhost:5173 | Vite dev server; edits in `frontend/` hot-reload |
+| API | http://localhost:8000/docs | FastAPI docs; migrations run on startup |
+| Database | `localhost:5433` | PostgreSQL 17, user/password/db `momentum` |
+
+Fill it with sample data (3 goals, a week of check-ins, and a plan for today):
+
+```bash
+docker compose exec backend python -m scripts.seed --reset
+```
+
+`--reset` wipes **all** data first. Without it, the script only runs on an empty database.
+
+### Run the frontend or backend locally
+
+Handy for faster edits and debugging. Keep the database in Docker (`docker compose up -d db`), and stop the matching container so ports don't clash.
+
+```bash
+# Backend (http://localhost:8000)
+cd backend
+cp ../.env.example .env        # then add your GEMINI_API_KEY
+uv sync
+uv run alembic upgrade head
+uv run uvicorn app.main:app --reload
+
+# Frontend (http://localhost:5173), forwards /api to localhost:8000
+cd frontend
+npm install
+npm run dev
+```
+
+### Tests
+
+```bash
+cd backend
+uv run pytest
+```
+
+Tests use a separate `momentum_test` database (created automatically), so your dev data is never touched.
 
 ---
 
