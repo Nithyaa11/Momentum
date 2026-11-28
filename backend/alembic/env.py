@@ -7,7 +7,7 @@ from alembic import context
 
 import app.models  # noqa: F401  (registers every table on Base.metadata)
 from app.config import get_settings
-from app.db import Base
+from app.db import CONNECT_ARGS, Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -66,6 +66,7 @@ def run_migrations_online() -> None:
         config.get_section(config.config_ini_section, {}),
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
+        connect_args=CONNECT_ARGS,
     )
 
     with connectable.connect() as connection:

@@ -5,7 +5,10 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from app.config import get_settings
 
-engine = create_engine(get_settings().database_url, pool_pre_ping=True)
+# connect_timeout: fail fast with a clear error if Postgres isn't running, instead of hanging
+CONNECT_ARGS = {"connect_timeout": 5}
+
+engine = create_engine(get_settings().database_url, pool_pre_ping=True, connect_args=CONNECT_ARGS)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
 
 # Predictable constraint names, so Alembic migrations stay readable and reversible

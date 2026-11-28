@@ -2,9 +2,9 @@ from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api import goals, health, tasks
+from app.api import goals, health, plans, tasks
 from app.config import get_settings
-from app.services.errors import NotFoundError, ValidationError
+from app.services.errors import ConflictError, NotFoundError, ValidationError
 
 settings = get_settings()
 
@@ -31,6 +31,12 @@ def invalid(_: Request, exc: ValidationError) -> JSONResponse:
     )
 
 
+@app.exception_handler(ConflictError)
+def conflict(_: Request, exc: ConflictError) -> JSONResponse:
+    return JSONResponse(status_code=status.HTTP_409_CONFLICT, content={"detail": str(exc)})
+
+
 app.include_router(health.router)
 app.include_router(goals.router, prefix="/api")
 app.include_router(tasks.router, prefix="/api")
+app.include_router(plans.router, prefix="/api")

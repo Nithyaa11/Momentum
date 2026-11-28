@@ -18,7 +18,7 @@ from sqlalchemy.engine import make_url
 from sqlalchemy.orm import Session
 
 from app.config import get_settings
-from app.db import get_db
+from app.db import CONNECT_ARGS, get_db
 from app.main import app
 
 TEST_DATABASE_URL = get_settings().test_database_url
@@ -27,7 +27,9 @@ ALEMBIC_INI = Path(__file__).resolve().parents[1] / "alembic.ini"
 
 def _ensure_database_exists(url: str) -> None:
     target = make_url(url)
-    admin = create_engine(target.set(database="postgres"), isolation_level="AUTOCOMMIT")
+    admin = create_engine(
+        target.set(database="postgres"), isolation_level="AUTOCOMMIT", connect_args=CONNECT_ARGS
+    )
     with admin.connect() as conn:
         exists = conn.scalar(
             text("SELECT 1 FROM pg_database WHERE datname = :name"), {"name": target.database}
@@ -46,7 +48,7 @@ def engine() -> Iterator[Engine]:
     command.downgrade(config, "base")
     command.upgrade(config, "head")
 
-    engine = create_engine(TEST_DATABASE_URL)
+    engine = create_engine(TEST_DATABASE_URL, connect_args=CONNECT_ARGS)
     yield engine
     engine.dispose()
 
