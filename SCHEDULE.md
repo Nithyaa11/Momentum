@@ -16,7 +16,7 @@ If a day runs over, finish it the next day and use a buffer day (🧩) to catch 
 | Milestone | Date | Status |
 | --- | --- | --- |
 | Backend core: goals, tasks, plans, check-ins | Sat, Nov 28 | ✅ Done |
-| Frontend skeleton running | Sun, Nov 29 | |
+| Frontend skeleton running | Sat, Nov 28 | ✅ Done |
 | Core loop works in the UI (plan → do → check in) | Tue, Dec 8 | |
 | AI planning live; **you start using Momentum daily** | Tue, Dec 15 | |
 | Behavior model + replanning (the differentiator) | Mon, Dec 21 | |
@@ -35,7 +35,8 @@ If a day runs over, finish it the next day and use a buffer day (🧩) to catch 
 | Fri Nov 27 | SQLAlchemy + Alembic; all V1 models; first migration | ✅ Done |
 | Fri Nov 27 | Pydantic schemas; goals and tasks API; Postgres-backed tests | ✅ Done |
 | Sat Nov 28 | Plans and check-in API (done / partial / skipped, undo) | ✅ Done |
-| **Sun Nov 29** | Frontend skeleton: Vite, React, TypeScript, Tailwind, shadcn/ui, React Router, TanStack Query. **Week 1 review** | Styled page with routes; notes in `docs/log.md` |
+| Sat Nov 28 | Frontend skeleton: Vite, React, TypeScript, Tailwind, shadcn/ui, React Router, TanStack Query. **Week 1 review** (`docs/log.md`) | ✅ Done (a day early) |
+| Sun Nov 29 | Free day: week closes. Optional: pull Monday's task forward | n/a |
 
 ## Week 2 (Mon Nov 30 – Sun Dec 6): Dev setup, design system, first screens
 
