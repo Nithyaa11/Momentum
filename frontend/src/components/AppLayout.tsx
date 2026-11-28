@@ -65,7 +65,7 @@ function MobileTabBar() {
                 cn(
                   'group flex min-h-16 flex-col items-center justify-center gap-1 text-[11px] font-medium transition-colors',
                   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset',
-                  isActive ? 'text-primary' : 'text-muted-foreground',
+                  isActive ? 'text-foreground' : 'text-muted-foreground',
                 )
               }
             >
@@ -74,7 +74,7 @@ function MobileTabBar() {
                   <span
                     className={cn(
                       'flex h-8 w-14 items-center justify-center rounded-full transition-colors',
-                      isActive ? 'bg-secondary text-secondary-foreground' : 'group-active:bg-secondary/60',
+                      isActive ? 'bg-secondary' : 'group-active:bg-secondary/60',
                     )}
                   >
                     <Icon className="size-5" strokeWidth={isActive ? 2.4 : 2} aria-hidden />
@@ -109,8 +109,8 @@ function DesktopSidebar() {
                     'flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                     isActive
-                      ? 'bg-sidebar-accent font-medium text-sidebar-accent-foreground'
-                      : 'text-muted-foreground hover:bg-sidebar-accent/60 hover:text-foreground',
+                      ? 'bg-secondary font-medium text-secondary-foreground'
+                      : 'text-muted-foreground hover:bg-secondary/60 hover:text-foreground',
                   )
                 }
               >

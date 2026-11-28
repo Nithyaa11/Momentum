@@ -26,8 +26,8 @@ export function ApiStatus({ compact = false }: { compact?: boolean }) {
         className={cn(
           'size-2 rounded-full',
           isPending && 'bg-muted-foreground/40',
-          ok && 'bg-success',
-          (isError || (data && !ok)) && 'bg-destructive',
+          ok && 'bg-emerald-500',
+          (isError || (data && !ok)) && 'bg-red-500',
         )}
         aria-hidden
       />
